@@ -1,0 +1,206 @@
+﻿<Window x:Class="StockManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StockManager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="auto" Width="auto">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20"/> 
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            Text="Product List"
+            Grid.Column="2"
+            Grid.Row="2"
+            FontSize="25"
+            Margin="0 10"
+            FontWeight="Bold"
+            />
+
+        <TextBlock 
+            Text="Add Product"
+            Grid.Column="3"
+            
+            Grid.Row="2"
+            FontSize="25"
+            Margin="25 10"
+            FontWeight="Bold"
+            />
+
+        <TextBlock 
+            Text="Delete Product"
+            Foreground="Red"
+            Grid.Column="4"
+            Grid.Row="2"
+            FontSize="25"
+            Margin="0 10"
+            FontWeight="Bold"
+            />
+
+        <DataGrid
+            Grid.Column="2"
+            Grid.Row="3"
+            MinHeight="100"
+            MinWidth="475"
+            Name="StockGrid"
+            ></DataGrid>
+
+
+        <Border 
+            Background="#ededed"
+            Grid.Column="3"
+            Grid.Row="3"
+            Padding="20"
+            Width="325"
+            Margin="25 0"
+            >
+
+            <StackPanel 
+                Orientation="Vertical"
+                >
+
+                <TextBlock 
+                    Text="Product Category"
+                    Foreground="Black"
+                    FontSize="20"
+                />
+
+                <TextBox 
+                    Background="White"
+                    Margin="0 15"
+                    FontSize="18"
+                    Padding="7.5"
+                    Name="productCategory"
+                />
+
+                <TextBlock 
+                    Text="Product Name"
+                    Foreground="Black"
+                    FontSize="20"
+                />
+
+                <TextBox 
+                    Background="#ffffff"
+                    Margin="0 15"
+                    FontSize="18"
+                    Padding="7.5"
+                    Name="productName"
+                />
+
+                <TextBlock 
+                    Text="Cost Price"
+                    Foreground="Black"
+                    FontSize="20"
+                />
+
+                <TextBox 
+                    Background="White"
+                    Margin="0 15"
+                    FontSize="18"
+                    Padding="7.5"
+                    Name="productCostPrice" TextChanged="productCostPrice_TextChanged"
+                />
+
+
+                <TextBlock 
+                    Text="Selling Price"
+                    Foreground="Black"
+                    FontSize="20"
+                />
+
+                <TextBox 
+                    Background="#ffffff"
+                    Margin="0 15"
+                    FontSize="18"
+                    Padding="7.5"
+                    Name="productSellingPrice" TextChanged="productSellingPrice_TextChanged"
+                />
+
+                <TextBlock 
+                    Text="Quantity"
+                    Foreground="Black"
+                    FontSize="20"
+                />
+
+                <TextBox 
+                    Background="#ffffff"
+                    Margin="0 15"
+                    FontSize="18"
+                    Padding="7.5"
+                    Name="productQuantity" TextChanged="productQuantity_TextChanged"
+                />
+
+                <Button 
+                    Background="black"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    Content="Add Product"
+                    Padding="30 10"
+                    Margin="0 10"
+                    Click="insert"
+                    />
+            </StackPanel>
+        </Border>
+
+        <Border
+            Background="#ededed"
+            Padding="20"
+            Grid.Row="3"
+            Grid.Column="4"
+            Width="350"
+            >
+
+            <StackPanel 
+                Orientation="Vertical"
+                
+                >
+
+                <TextBlock 
+                Text="Product Barcode"
+                Foreground="Black"
+                FontSize="20"
+                />
+
+                <TextBox 
+                    Background="White"
+                    Margin="0 15"
+                    FontSize="18"
+                    Padding="7.5"
+                    Name="deleteProductBarcode"
+                />
+
+                <Button
+                    Content="Delete Product"
+                    Background="Red"
+                    Foreground="White"
+                    Padding="25 10"
+                    Name="deleteProductButton"
+                    Click="delete"
+                    /> 
+                
+            </StackPanel>
+
+        </Border>
+    </Grid>
+</Window>
